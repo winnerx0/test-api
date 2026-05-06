@@ -13,7 +13,9 @@ func main() {
 		port = "8080"
 	}
 
-	app := fiber.New()
+	app := fiber.New(fiber.Config{
+		ReadBufferSize: 15 * 1024,
+	})
 
 	app.Get("/", func(c *fiber.Ctx) error {
 		return c.SendString("Deployed app on port " + port)
