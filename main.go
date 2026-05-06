@@ -10,7 +10,7 @@ import (
 func main() {
 	port := os.Getenv("PORT")
 	if port == "" {
-		log.Fatal("PORT environment variable is required")
+		port = "8080"
 	}
 
 	app := fiber.New()
